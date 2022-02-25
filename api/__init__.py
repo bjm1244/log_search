@@ -1,8 +1,6 @@
-from flask import Blueprint
+from flask_restx import Namespace
 
-api_blueprint = Blueprint('api',
-                          __name__
-                          )
+api_namespace = Namespace('api', description='signed RESTful API')
 
 from . import api_total_client
 from . import api_client_list

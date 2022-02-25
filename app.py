@@ -1,14 +1,7 @@
 import glob
 from flask import Flask
 from flask_restx import Api
-from api import api_blueprint
 import pandas as pd
-
-
-def create_app():
-    app = Flask(__name__)
-    app.register_blueprint(api_blueprint, url_prefix='/api')
-    return app
 
 
 def make_data_structure():
@@ -37,7 +30,10 @@ def make_data_structure():
 
 
 signed_df = make_data_structure()
-web_app = create_app()
+app = Flask(__name__)
+api = Api(app, title='My API', doc='/doc')
+from api import api_namespace
+api.add_namespace(api_namespace, path='/api')
 
 if __name__ == '__main__':
-    web_app.run(host='127.0.0.1', port=5000)
+    app.run(host='127.0.0.1', port=5000)
