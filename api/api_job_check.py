@@ -8,6 +8,9 @@ from app import signed_df
 @api_namespace.route('/check', methods=['GET', 'POST'])
 class api_job_check(Resource):
     def get(self):
+        """
+                빠진 잡
+        """
         client_data_df = signed_df.copy()
         job_num_list = client_data_df["job_num"].astype(int).tolist()
         max_job_num = max(job_num_list)

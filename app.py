@@ -30,8 +30,9 @@ def make_data_structure():
 
 
 signed_df = make_data_structure()
+
 app = Flask(__name__)
-api = Api(app, title='My API', doc='/doc')
+api = Api(app, title='SIGNED LOG API', doc='/doc')
 from api import api_namespace
 api.add_namespace(api_namespace, path='/api')
 

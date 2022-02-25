@@ -8,6 +8,9 @@ from app import signed_df
 @api_namespace.route('/total/<string:client_id>', methods=['GET', 'POST'])
 class api_total_client(Resource):
     def get(self, client_id):
+        """
+                총합
+        """
         if client_id == "abcd":
             return_data_json = {
                 "client_id": client_id,
