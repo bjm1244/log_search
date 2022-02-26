@@ -5,7 +5,7 @@ from api import api_namespace
 from app import signed_df
 
 
-@api_namespace.route('/list', methods=['GET', 'POST'])
+@api_namespace.route('/list', methods=['GET'])
 class api_client_list(Resource):
     def get(self):
         """

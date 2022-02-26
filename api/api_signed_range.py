@@ -5,7 +5,7 @@ from api import api_namespace
 from app import signed_df
 
 
-@api_namespace.route('/range/<string:more_count>/<string:under_count>', methods=['GET', 'POST'])
+@api_namespace.route('/range/<string:more_count>/<string:under_count>', methods=['GET'])
 class api_signed_range(Resource):
     def get(self, more_count, under_count):
         """
@@ -16,8 +16,8 @@ class api_signed_range(Resource):
         client_data_df = client_data_df[int(more_count) <= client_data_df["signed_amount"]]
         client_data_df = client_data_df[int(under_count) > client_data_df["signed_amount"]]
         # print(client_data_df)
-        avg_count = client_data_df["signed_amount"].mean()
-        std_count = client_data_df["signed_amount"].std()
+        avg_count = client_data_df["signed_count"].mean()
+        std_count = client_data_df["signed_count"].std()
         return_data_json = {
             "average": avg_count,
             "std": std_count

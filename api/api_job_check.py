@@ -5,7 +5,7 @@ from api import api_namespace
 from app import signed_df
 
 
-@api_namespace.route('/check', methods=['GET', 'POST'])
+@api_namespace.route('/check', methods=['GET'])
 class api_job_check(Resource):
     def get(self):
         """
