@@ -14,8 +14,9 @@ jobs:
           pip3 install -r requirements.txt
       - name: Test with curl
         run: |
-          python3 app.py
-          curl http://127.0.0.1:5000/total/abcd
+          python3 app.py &
+          source curl_test.sh
+
 
 #  build-and-push-image:
 #    runs-on: ubuntu-latest
