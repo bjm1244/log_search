@@ -6,11 +6,9 @@ import pandas as pd
 
 def make_data_structure():
     """
-        고객코드
-        주식종목번호
-        작업고유번호
-        체결량
-        체결금액
+        판다스 데이터프레임 구조 : 로그데이터, 고객코드, 주식종목번호, 작업고유번호, 체결량, 체결금액
+        판다스를 사용한 이유 :
+
     """
     file_list = glob.glob('logs/*.txt')
     file_list.sort()
