@@ -9,7 +9,7 @@ from app import signed_df
 class api_client_list(Resource):
     def get(self):
         """
-                클라이언트 리스트
+                모든 고객사 코드를 반환하는 api
         """
         client_list = list(set(signed_df["client_code"]))
         client_list.sort()

@@ -14,7 +14,7 @@
     - /api/check
         - 정합성을 테스트하기 위해서 작업고유번호를 확인하는 api
     - /api/range/<string:more_count>/<string:under_count>
-        - [more_count, under_count) 범위의 체결금액을 통해 모든 수량의 평균, 표준편차 출력 api
+        - path variable [more_count, under_count) 범위의 체결금액을 통해 모든 수량의 평균, 표준편차 출력 api
     - /api/total/<string:client_id>
         - client_id path variable 을 통해 고객코드, total 출력 api
     - /doc
@@ -38,6 +38,6 @@
 
 ## 도커 이미지 실행방법
 ~~~
-1. docker build . -t myimage
+1. docker load -i myimage.tar
 2. docker run --name=mycontainer -p 5000:5000 myimage
 ~~~

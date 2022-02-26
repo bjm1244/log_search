@@ -9,7 +9,7 @@ from app import signed_df
 class api_job_check(Resource):
     def get(self):
         """
-                빠진 잡
+                정합성을 테스트하기 위해서 작업고유번호를 확인하는 api
         """
         client_data_df = signed_df.copy()
         job_num_list = client_data_df["job_num"].astype(int).tolist()

@@ -9,7 +9,7 @@ from app import signed_df
 class api_total_client(Resource):
     def get(self, client_id):
         """
-                총합
+                client_id path variable 을 통해 고객코드, total 출력 api
         """
         if client_id == "abcd":
             return_data_json = {
