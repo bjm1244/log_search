@@ -2,6 +2,9 @@
 
 ## 서버 구조
 ~~~
+0. prototype webserver
+    - webserver : rust, tokio, tokio process, warp
+
 1. 사용한 기술
     - webserver : python flask
     - version control : github
@@ -38,6 +41,10 @@
 
 ## 도커 이미지 실행방법
 ~~~
-1. docker load -i myimage.tar
-2. docker run --name=mycontainer -p 5000:5000 myimage
+- 소스에서 도커 이미지를 만들어야 하는 경우
+    1. docker build --build-arg GIT_COMMIT=$(git rev-parse HEAD) -t username/axe-test-web-server:$(git rev-parse HEAD) .
+    2. docker run --name=mycontainer -p 5000:5000 username/axe-test-web-server:$(git rev-parse HEAD)
+- 도커 이미지가 있는 경우
+    1. docker load -i axe-test-web-server.tar
+    2. docker run --name=mycontainer -p 5000:5000 axe-test-web-server
 ~~~
