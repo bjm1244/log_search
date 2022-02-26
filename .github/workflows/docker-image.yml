@@ -24,4 +24,4 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/axe-test-web-server:$(git rev-parse --short HEAD)
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/axe-test-web-server:${{ github.sha }}
