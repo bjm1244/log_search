@@ -37,6 +37,12 @@
     - pip install -r requirements.txt
 5. flask 웹서버 실행
     - python app.py
+6. 서버 접속
+    - http://localhost:5000/doc
+    - http://localhost:5000/api/list
+    - http://localhost:5000/api/check
+    - http://localhost:5000/api/range/<string:more_count>/<string:under_count>
+    - http://localhost:5000/api/total/<string:client_id>
 ~~~
 
 ## 도커 이미지 실행방법
